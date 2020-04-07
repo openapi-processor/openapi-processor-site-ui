@@ -190,7 +190,7 @@ html.is-clipped--nav {
   font-size: calc(15 / var(--rem-base) * 1rem);
   flex-shrink: 0;
   color: var(--nav-muted-color);
-  box-shadow: 0 -1px 0 var(--nav-panel-divider-color);
+  /* box-shadow: 0 -1px 0 var(--nav-panel-divider-color); */
   padding: 0 0.25rem 0 0.5rem;
   display: flex;
   align-items: center;

@@ -16,6 +16,10 @@ body {
   width: 100%;
   word-wrap: break-word;
   z-index: var(--z-index-navbar);
+
+  /* oap */
+  box-shadow: 0 1px 0 var(--toolbar-border-color);
+  padding: 0 0.5rem;
 }
 
 .navbar a {
@@ -276,4 +280,12 @@ body {
   color: var(--navbar-button-font-color);
   padding: 0 0.75em;
   white-space: nowrap;
+}
+
+/* oap */
+
+.navbar-brand .navbar-item {
+  font-size: x-large;
+  padding-left: 0;
+  margin-left: -0.5rem;
 }
