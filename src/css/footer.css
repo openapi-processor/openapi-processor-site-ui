@@ -13,10 +13,3 @@ footer.footer {
 .footer a {
   color: var(--footer-link-font-color);
 }
-
-/* oap */
-
-.logo {
-  display: flex;
-  align-items: center;
-}

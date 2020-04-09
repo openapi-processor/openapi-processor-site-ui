@@ -269,7 +269,8 @@
   line-height: 1;
   font-weight: var(--admonition-label-font-weight);
   text-transform: uppercase;
-  border-radius: 0.45rem;
+  border-radius: 3px;
+  /* border-radius: 0.45rem; */
   transform: translate(-0.5rem, -50%);
 }
 

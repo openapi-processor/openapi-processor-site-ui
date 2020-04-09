@@ -281,11 +281,3 @@ body {
   padding: 0 0.75em;
   white-space: nowrap;
 }
-
-/* oap */
-
-.navbar-brand .navbar-item {
-  font-size: x-large;
-  padding-left: 0;
-  margin-left: -0.5rem;
-}

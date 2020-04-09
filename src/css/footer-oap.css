@@ -1,0 +1,32 @@
+.footer-logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "main" "gh";
+}
+
+.footer-grid .main {
+  grid-area: main;
+}
+
+.footer-grid .github {
+  grid-area: gh;
+}
+
+.footer-title {
+  padding-left: 0.8rem;
+  font-weight: bold;
+}
+
+.footer-license {
+  margin-top: 0.3rem;
+  margin-left: 40px;
+}
+
+.footer-text {
+  padding-left: 0.8rem;
+}
