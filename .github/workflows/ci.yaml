@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install
-    - run: gulp bundle:pack
+    - run: gulp
     - name: archive artifacts
       uses: actions/upload-artifact@v1
       if: success()
