@@ -19,4 +19,4 @@ jobs:
       if: success()
       with:
         name: artifacts
-        path: build/ui-bundle.zip
+        path: build
