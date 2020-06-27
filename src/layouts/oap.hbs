@@ -5,115 +5,9 @@
   </head>
 
   <body class="x-bg-gray-100">
+    {{> oap-versions-component}}
 
 
-
-  <template id="oap-versions">
-    <style>
-      @import "{{{uiRootPath}}}/css/oap.css";
-    </style>
-    <div class="relative">
-      <button id="menu" class="py-0 px-2 w-10 rounded border border-gray-500 focus:outline-none focus:border-green-700 hover:bg-green-500 hover:text-white text-xs">
-        <span id="version">?</span>
-      </button>
-      <button id="outside" class="fixed top-0 right-0 bottom-0 left-0 h-full w-full bg-blue-300 hidden">&nbsp;</button>
-      <div id="menu" class="absolute block text-xs bg-white rounded border overflow-hidden w-10 mt-1 shadow z-10 hidden">
-        <slot>?</slot>
-      </div>
-    </div>
-  </template>
-
-  <template id="oap-version">
-    <style>
-      @import "{{{uiRootPath}}}/css/oap.css";
-    </style>
-    <a class="block px-2 py-1 text-gray-800 hover:bg-green-600 hover:text-white">
-      <slot>?</slot>
-    </a>
-  </template>
-
-
-  <script>
-    customElements.define ('oap-versions', class Versions extends HTMLElement {
-
-      constructor() {
-        super()
-        this.shadow = this.attachShadow({mode: 'open'})
-
-        let template = document.getElementById('oap-versions')
-        this.template = document.importNode(template.content, true)
-        this.templateVersion = this.template.querySelector('span#version')
-        this.templateButton = this.template.querySelector('button#menu')
-        this.templateOutside = this.template.querySelector('button#outside')
-        this.templateMenu = this.template.querySelector('div#menu')
-
-        this.menuOpen = false
-        this.templateButton.addEventListener('click', () => {
-          this.menuOpen = !this.menuOpen
-          this.updateView ()
-        })
-
-        this.templateOutside.addEventListener('click', () => {
-          this.menuOpen = false
-          this.updateView ()
-        })
-      }
-
-      updateView () {
-        if (this.menuOpen) {
-          this.templateMenu.classList.remove ('hidden')
-          this.templateOutside.classList.remove ('hidden')
-        } else {
-          this.templateMenu.classList.add ('hidden')
-          this.templateOutside.classList.add ('hidden')
-        }
-      }
-
-      connectedCallback () {
-        this.templateVersion.innerHTML = this.current
-        this.shadow.appendChild(this.template)
-      }
-
-      get current () {
-        return this.getAttribute ('current')
-      }
-
-      set current (newValue) {
-        this.setAttribute ('current', newValue)
-      }
-
-    })
-
-    customElements.define ('oap-version', class Version extends HTMLElement {
-
-      constructor() {
-        super()
-        this.shadow = this.attachShadow({mode: 'open'})
-
-        let template = document.getElementById('oap-version')
-        this.template = document.importNode(template.content, true)
-        this.link = this.template.querySelector('a')
-
-        console.log('version')
-      }
-
-      connectedCallback () {
-        console.log('version', this.href)
-        this.link.setAttribute('href', this.href)
-        this.shadow.appendChild(this.template)
-      }
-
-      get href () {
-        return this.getAttribute ('href')
-      }
-
-      set href (newValue) {
-        this.setAttribute ('href', newValue)
-      }
-
-    })
-
-  </script>
 
 
 
@@ -167,23 +61,7 @@
                     <div>{{{ this.title }}}</div>
                   {{/if}}
 
-                  <oap-versions current="{{version this @root.page}}" class="x-border">
-                    {{#each this.versions}}
-                      {{#if (eq ../name @root.page.component.name)}}
-
-                        {{#unless (eq this.displayVersion @root.page.displayVersion)}}
-                          <oap-version href="{{this.url}}">{{this.displayVersion}}</oap-version>
-                        {{/unless}}
-
-                      {{else}}
-
-                        {{#unless (eq this.displayVersion ../versions.[0].displayVersion)}}
-                          <oap-version href="{{this.url}}">{{this.displayVersion}}</oap-version>
-                        {{/unless}}
-
-                      {{/if}}
-                    {{/each}}
-                  </oap-versions>
+                  {{> oap-versions}}
 
                   <div class="relative">
 
