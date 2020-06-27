@@ -55,7 +55,8 @@
              {{#each site.components}}
 
                 <div class="flex items-center justify-between" id="modules-{{@index}}">
-                  {{#if (eq this.name @root.page.component.name)}}
+
+                  {{#if (isPageComponent this)}}
                     <div class="font-bold">{{{ this.title }}}</div>
                   {{else}}
                     <div>{{{ this.title }}}</div>
@@ -63,6 +64,7 @@
 
                   {{> oap-versions}}
                 </div>
+
               {{/each}}
           </section>
 

@@ -1,9 +1,8 @@
 {{! versions button & menu }}
 
-<oap-versions current="{{version this @root.page}}">
+<oap-versions current="{{version this}}">
   {{#each this.versions}}
-    {{! currnet component is page component? }}
-    {{#if (eq ../name @root.page.component.name)}}
+    {{#if (isPageComponent ..)}}
 
       {{#unless (eq this.displayVersion @root.page.displayVersion)}}
         <oap-version href="{{this.url}}">{{this.displayVersion}}</oap-version>

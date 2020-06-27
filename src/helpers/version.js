@@ -1,18 +1,16 @@
 'use strict'
 
 /**
- * returns the first version of the given component.
- *
- * If the component is the page component it returns page.displayVersion, otherwise it returns its
- * first version.
+ * returns the first (newest) version of the given component unless it it the page component. In that
+ * case it returns page version.
  *
  * @param component the component
- * @param page the page object
- * @returns the version string
+ * @param ctx the antora context (automatically added)
+ * @returns the display version string
  */
-module.exports = (component, page) => {
-  if (component.name === page.component.name) {
-    return page.displayVersion
+module.exports = (component, ctx) => {
+  if (component.name === ctx.data.root.page.component.name) {
+    return ctx.data.root.page.displayVersion
   } else {
     return component.versions[0].displayVersion
   }
