@@ -62,50 +62,6 @@
                   {{/if}}
 
                   {{> oap-versions}}
-
-                  <div class="relative">
-
-                    {{!--
-                  {{#if (eq this.name @root.page.component.name)}}
-                    <versions v-bind:text="{{@root.page.displayVersion}}"></versions>
-                  {{else}}
-                    <versions v-bind:text="{{this.versions.[0].displayVersion}}"></versions>
-                  {{/if}}
-                    --}}
-
-                    <button class="py-0 px-2 w-10 rounded border border-gray-500 focus:outline-none focus:border-blue-500 text-xs">
-                     {{#if (eq this.name @root.page.component.name)}}
-                        {{@root.page.displayVersion}}
-                     {{else}}
-                       {{this.versions.[0].displayVersion}}
-                     {{/if}}
-                    </button>
-
-                    <div class="absolute block text-xs rounded border overflow-hidden w-10 mt-1 shadow z-10">
-                      {{#each this.versions}}
-                        {{#if (eq ../name @root.page.component.name)}}
-
-                          {{#unless (eq this.displayVersion @root.page.displayVersion)}}
-                            <a class="block px-2 py-1 text-gray-800 hover:bg-green-600 hover:text-white" href="{{this.url}}">
-                              {{this.displayVersion}}
-                            </a>
-                          {{/unless}}
-
-                        {{else}}
-
-                          {{#unless (eq this.displayVersion ../versions.[0].displayVersion)}}
-                            <a class="block px-2 py-1 text-gray-800 hover:bg-green-600 hover:text-white" href="{{this.url}}">
-                              {{this.displayVersion}}
-                            </a>
-                          {{/unless}}
-
-                        {{/if}}
-
-                      {{/each}}
-                    </div>
-
-                  </div>
-
                 </div>
               {{/each}}
           </section>
