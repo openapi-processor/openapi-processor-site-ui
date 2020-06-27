@@ -56,10 +56,6 @@ module.exports = (src, dest, preview) => () => {
 
   return merge(
     vfs
-      .src('js/appjs/*.js', { ...opts, sourcemaps })
-      .pipe(uglify())
-      .pipe(concat('js/app.js')),
-    vfs
       .src('js/+([0-9])-*.js', { ...opts, sourcemaps })
       .pipe(uglify())
       // NOTE concat already uses stat from newest combined file
