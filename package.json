@@ -53,6 +53,7 @@
     "typeface-roboto": "0.0.75",
     "typeface-roboto-mono": "0.0.75",
     "vinyl-buffer": "~1.0",
-    "vinyl-fs": "~3.0"
+    "vinyl-fs": "~3.0",
+    "tailwindcss": "~1.4.6"
   }
 }
