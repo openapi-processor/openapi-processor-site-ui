@@ -16,7 +16,7 @@ const postcssCalc = require('postcss-calc')
 const postcssImport = require('postcss-import')
 const postcssUrl = require('postcss-url')
 const postcssVar = require('postcss-custom-properties')
-const uglify = require('gulp-uglify')
+const uglify = require('gulp-uglify-es').default
 const vfs = require('vinyl-fs')
 
 module.exports = (src, dest, preview) => () => {
@@ -100,6 +100,9 @@ module.exports = (src, dest, preview) => () => {
     //vfs.src(require.resolve('<package-name-or-require-path>'), opts).pipe(concat('js/vendor/<library-name>.js')),
     vfs
       .src('css/site.css', { ...opts, sourcemaps })
+      .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } }))),
+    vfs
+      .src('css/oap.css', { ...opts, sourcemaps })
       .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } }))),
     vfs.src('font/*.{ttf,woff*(2)}', opts),
     vfs
