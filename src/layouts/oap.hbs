@@ -23,6 +23,32 @@
 
         <section class="flex-col lg:flex-grow lg:w-main px-4">
 
+          <div class="flex justify-between bg-white lg:sticky lg:top-sidebar text-sm py-2 border-b z-20">
+
+            <div class="flex">
+              <div class="mr-1">
+                {{#with site.homeUrl}}
+                  <a href="{{{relativize this}}}" class="text-gray-500 hover:text-green-600">
+                    <i class="fas fa-home"></i>
+                  </a>
+                {{/with}}
+              </div>
+
+              <div>
+                {{> oap-breadcrumbs}}
+              </div>
+            </div>
+
+            <div class="ml-1 text-gray-500 hover:text-green-600">
+              {{#if (and page.fileUri (not env.CI))}}
+                <a href="{{page.fileUri}}"><i class="fas fa-pen"></i></a>
+              {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
+              <a href="{{page.editUrl}}"><i class="fas fa-pen"></i></a>
+              {{/if}}
+            </div>
+
+          </div>
+
           <article class="bg-white p-8 xborder doc">
             {{#if (eq page.layout '404')}}
             <h1 class="page">{{{or page.title 'Page Not Found'}}}</h1>

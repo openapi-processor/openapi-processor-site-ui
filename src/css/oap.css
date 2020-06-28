@@ -1,5 +1,7 @@
 /* tailwind */
 @import "oap/tailwind.css";
+/* other */
+@import "oap/main.css";
 /* asciidoctor */
 @import "vars.css";
 @import "oap/doc.css";
