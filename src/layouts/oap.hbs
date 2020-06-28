@@ -69,6 +69,27 @@
           {{/if}}
           </article>
 
+          <div class="bg-white text-gray-500 text-sm hidden sm:block">
+
+            {{#unless (eq page.attributes.pagination undefined)}}
+            {{#if (or page.previous page.next)}}
+            <nav class="flex justify-between">
+              {{#with page.previous}}
+              <span class="prev">
+                <a href="{{{relativize ./url}}}"><i class="fas fa-reply mr-1"></i>{{{./content}}}</a>
+              </span>
+              {{/with}}
+              {{#with page.next}}
+              <span class="next">
+                <a href="{{{relativize ./url}}}">{{{./content}}}<i class="fas fa-share ml-1"></i></a>
+              </span>
+              {{/with}}
+            </nav>
+            {{/if}}
+            {{/unless}}
+
+          </div>
+
         </section>
 
         <aside class="lg:w-sidebar lg:pt-12 x-bg-gray-100 p-4 divide-y">
