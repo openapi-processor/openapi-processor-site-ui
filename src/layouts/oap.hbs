@@ -4,9 +4,7 @@
     {{> oap-head}}
   </head>
 
-  <body>
-    {{> oap-versions-component}}
-
+  <body class="text-green-900">
 
     <header class="bg-white w-full fixed top-0 z-30">
 
@@ -108,15 +106,29 @@
 
              {{#each site.components}}
 
-                <div class="flex items-center justify-between">
+                <div class="flex flex-wrap justify-between items-center">
 
-                  {{#if (isPageComponent this)}}
-                    <div class="font-bold">{{{ this.title }}}</div>
-                  {{else}}
-                    <div><a href="{{#with (version this)}}{{url}}{{/with}}" class="hover:text-green-600">{{{ this.title }}}</a></div>
-                  {{/if}}
+                  <span class="{{#if (isPageComponent this)}}font-bold{{/if}}">{{{ this.title }}}</span>
 
-                  {{> oap-versions}}
+                  <div>
+                  {{#each this.versions}}
+
+                    {{#if (isPageComponent ..)}}
+
+                      <a href="{{this.url}}" class="px-1 text-xs text-gray-700 border border-gray-300 hover:bg-green-600 hover:text-white rounded mr-1 last:mr-0 {{#if (eq this.displayVersion @root.page.displayVersion)}}bg-green-300{{/if}}"
+                      >{{this.displayVersion}}</a>
+
+                    {{else}}
+
+                      <a href="{{this.url}}" class="px-1 text-xs text-gray-700 border border-gray-300 hover:bg-green-600 hover:text-white rounded mr-1 last:mr-0"
+                      >{{this.displayVersion}}</a>
+
+                    {{/if}}
+
+
+                  {{/each}}
+                  </div>
+
                 </div>
 
               {{/each}}
