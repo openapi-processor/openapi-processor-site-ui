@@ -27,3 +27,7 @@
 .breadcrumbs li:last-of-type::after {
   content: none;
 }
+
+.footer {
+  background-color: #e1e1e1;
+}
