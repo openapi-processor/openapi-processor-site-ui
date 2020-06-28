@@ -10,7 +10,7 @@
  */
 module.exports = (component, ctx) => {
   if (component.name === ctx.data.root.page.component.name) {
-    return ctx.data.root.page.versions.find((v) => v.version === ctx.data.root.page.version)
+    return ctx.data.root.page.component.versions.find((v) => v.version === ctx.data.root.page.version)
   } else {
     return component.versions[0]
   }
