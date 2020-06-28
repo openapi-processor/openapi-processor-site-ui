@@ -1,3 +1,10 @@
+.oap-logo {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  height: 8rem;
+}
+
 .home-link {
   background: url(../img/home-o.svg) no-repeat 50% 45%;
   background-size: 50%;

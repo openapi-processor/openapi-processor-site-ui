@@ -1,6 +1,6 @@
 {{! versions button & menu }}
 
-<oap-versions current="{{version this}}">
+<oap-versions current="{{#with (version this)}}{{displayVersion}}{{/with}}">
   {{#each this.versions}}
     {{#if (isPageComponent ..)}}
 
