@@ -1,26 +1,26 @@
 {{! versions button & menu webcomponent }}
 
 <template id="oap-versions">
+  <link rel="stylesheet" href="{{{uiRootPath}}}/css/oap.css">
   <style>
-    @import "{{{uiRootPath}}}/css/oap.css";
   </style>
   <div class="relative">
-    <button id="menu" class="py-0 px-2 w-10 rounded border border-gray-500 focus:outline-none focus:border-green-700 hover:bg-green-500 hover:text-white text-xs">
+    <button id="menu" class="py-0 px-2 rounded border border-gray-500 focus:outline-none focus:border-green-700 hover:bg-green-500 hover:text-white text-xs">
       <span id="version">?</span>
     </button>
     <button id="outside" class="fixed top-0 right-0 bottom-0 left-0 h-full w-full focus:outline-none bg-transparent hidden">&nbsp;</button>
-    <div id="menu" class="absolute block text-xs bg-white rounded border overflow-hidden w-10 mt-1 shadow z-10 hidden">
-      <slot>?</slot>
+    <div id="menu" class="absolute block text-xs bg-white rounded border overflow-hidden mt-1 shadow z-10 hidden">
+      <slot></slot>
     </div>
   </div>
 </template>
 
 <template id="oap-version">
+  <link rel="stylesheet" href="{{{uiRootPath}}}/css/oap.css">
   <style>
-    @import "{{{uiRootPath}}}/css/oap.css";
   </style>
   <a class="block px-2 py-1 text-gray-800 hover:bg-green-600 hover:text-white">
-    <slot>?</slot>
+    <slot></slot>
   </a>
 </template>
 
