@@ -20,4 +20,10 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .lg\:top-sidebar {
+    top: 2.95rem;
+  }
+}
+
 /* >> custom utilities ============================================= */

@@ -4,21 +4,18 @@
     {{> oap-head}}
   </head>
 
-  <body class="x-bg-gray-100">
+  <body>
     {{> oap-versions-component}}
 
 
+    <header class="bg-white w-full fixed top-0 z-30">
 
-
-
-
-  <header class="bg-white">
-
-      <div class="border-b m-0 px-3 max-w-screen-xl mx-auto flex items-center justify-between">
+      <div class="h-12 border-b m-0 px-4 max-w-screen-xl mx-auto flex items-center justify-between">
         header
       </div>
 
     </header>
+
 
     <main class="m-0 lg:px-5 py-5 max-w-screen-xl mx-auto">
 
@@ -48,13 +45,13 @@
 
         </section>
 
-        <aside class="lg:w-sidebar bg-gray-100 p-4 divide-y">
+        <aside class="lg:w-sidebar lg:pt-12 x-bg-gray-100 p-4 divide-y">
 
           <section class="mb-2">
 
              {{#each site.components}}
 
-                <div class="flex items-center justify-between" id="modules-{{@index}}">
+                <div class="flex items-center justify-between">
 
                   {{#if (isPageComponent this)}}
                     <div class="font-bold">{{{ this.title }}}</div>
@@ -68,7 +65,7 @@
               {{/each}}
           </section>
 
-          <section>
+          <section class="lg:sticky" style="top: 0.25rem">
 
             {{#with page.navigation}}
             <div class="nav-panel-menu is-active" data-panel="menu">
