@@ -40,6 +40,14 @@
   margin: 1.5rem 0;
 }
 
+.doc h1 {
+  font-size: xx-large;
+}
+
+.doc h2 {
+  font-size: x-large;
+}
+
 /*
 @media screen and (min-width: 769px) {
   .doc > h1.page:first-child {
@@ -433,6 +441,10 @@
 .doc .ulist .olist,
 .doc .ulist .ulist {
   margin-top: 0.5rem;
+}
+
+.doc .ulist ul {
+  list-style-type: disc;
 }
 
 .doc .olist li,
