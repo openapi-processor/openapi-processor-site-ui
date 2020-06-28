@@ -300,6 +300,7 @@
 }
 
 .doc .admonitionblock .icon i::after {
+  font-family: Roboto, sans-serif;
   content: attr(title);
 }
 
