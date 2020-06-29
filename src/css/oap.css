@@ -1,0 +1,9 @@
+/* tailwind */
+@import "oap/tailwind.css";
+/* other */
+@import "oap/main.css";
+@import "oap/badges.css";
+/* asciidoctor */
+@import "vars.css";
+@import "oap/doc.css";
+@import "highlight.css";

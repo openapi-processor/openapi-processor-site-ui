@@ -33,8 +33,8 @@
   --panel-border-color: var(--color-smoke-90);
   --scrollbar-thumb-color: var(--color-gray-10);
   /* navbar */
-  --navbar-background: var(--panel-background);
-  --navbar-font-color: var(--color-jet-70);
+  --navbar-background: var(--panel-background); /* oap */
+  --navbar-font-color: var(--color-jet-70); /* oap */
   /* --navbar-background: var(--color-jet-80); */
   /* --navbar-font-color: var(--color-white); */
   --navbar_hover-background: var(--color-black);
@@ -46,7 +46,7 @@
   --navbar-menu-font-color: var(--body-font-color);
   --navbar-menu_hover-background: var(--color-smoke-50);
   /* nav */
-  --nav-background: var(--color-white);
+  --nav-background: var(--color-white); /* oap */
   /* --nav-background: var(--panel-background); */
   --nav-border-color: var(--color-gray-10);
   --nav-line-height: 1.35;
@@ -55,8 +55,8 @@
   --nav-panel-divider-color: var(--color-smoke-90);
   --nav-secondary-background: var(--color-smoke-70);
   /* toolbar */
+  --toolbar-background: var(--color-white); /* oap */
   /* --toolbar-background: var(--panel-background); */
-  --toolbar-background: var(--color-white);
   --toolbar-border-color: var(--panel-border-color);
   --toolbar-font-color: var(--color-gray-70);
   --toolbar-muted-color: var(--color-gray-30);
@@ -120,7 +120,7 @@
   --footer-font-color: var(--color-gray-70);
   --footer-link-font-color: var(--color-jet-80);
   /* dimensions and positioning */
-  --navbar-height: calc(65 / var(--rem-base) * 1rem);
+  --navbar-height: calc(65 / var(--rem-base) * 1rem); /* oap */
   /* --navbar-height: calc(63 / var(--rem-base) * 1rem); */
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);

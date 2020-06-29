@@ -1,0 +1,28 @@
+@tailwind base;
+
+/* >> custom components ============================================ */
+@tailwind components;
+
+/* << custom components ============================================ */
+
+/* >> custom utilities ============================================= */
+@tailwind utilities;
+
+@responsive {
+  .w-sidebar {
+    width: 350px;
+    min-width: 350px;
+  }
+
+  .w-main {
+    max-width: calc(100% - 350px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:top-sidebar {
+    top: 3.95rem;
+  }
+}
+
+/* >> custom utilities ============================================= */
