@@ -1,0 +1,16 @@
+.badge {
+  display: inline-block;
+  padding: 0 0.5rem;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  color: #fff;
+  /* text-transform: uppercase; */
+  vertical-align: middle;
+  /* font-size: 11px !important; */
+}
+
+.badge-since {
+  font-size: smaller;
+  border-radius: 3px;
+  background-color: #009c7b;
+}

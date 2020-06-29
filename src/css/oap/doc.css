@@ -323,6 +323,10 @@
   align-items: center;
 }
 
+.doc img {
+  display: inline-block;
+}
+
 .doc .imageblock img {
   display: block;
 }
