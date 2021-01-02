@@ -25,6 +25,7 @@ export class Version {
   closeSend: boolean = false;
 
   @Prop() version: string;
+  @Prop() visible: string = 'master';
 
   @State() open: boolean = false;
 
@@ -42,7 +43,7 @@ export class Version {
       } as Item;
       item.active = item.version == this.version
 
-      if (item.version == 'master') {
+      if (item.version == this.visible) {
         this.left1 = item;
       }
       else {

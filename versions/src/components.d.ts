@@ -22,6 +22,7 @@ export namespace Components {
     }
     interface OapVersions {
         "version": string;
+        "visible": string;
     }
 }
 declare global {
@@ -60,6 +61,7 @@ declare namespace LocalJSX {
     interface OapVersions {
         "onOapClose"?: (event: CustomEvent<void>) => void;
         "version"?: string;
+        "visible"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
