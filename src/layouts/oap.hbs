@@ -103,35 +103,36 @@
         <aside class="lg:w-sidebar x-bg-gray-100 px-4 py-3 divide-y">
 
           <section class="mb-2">
+            {{#each site.components}}
 
-             {{#each site.components}}
+              <div class="flex flex-wrap justify-between items-center">
 
-                <div class="flex flex-wrap justify-between items-center">
+                {{#if (isPageComponent this)}}
 
-                  <span class="{{#if (isPageComponent this)}}font-bold{{/if}}">{{{ this.title }}}</span>
-
+                  <span class="font-bold">{{{ this.title }}}</span>
                   <div>
-                  {{#each this.versions}}
-
-                    {{#if (isPageComponent ..)}}
-
-                      <a href="{{this.url}}" class="px-1 text-xs text-gray-700 border border-gray-300 hover:bg-green-600 hover:text-white rounded mr-1 last:mr-0 {{#if (eq this.displayVersion @root.page.displayVersion)}}bg-green-300{{/if}}"
-                      >{{this.displayVersion}}</a>
-
-                    {{else}}
-
-                      <a href="{{this.url}}" class="px-1 text-xs text-gray-700 border border-gray-300 hover:bg-green-600 hover:text-white rounded mr-1 last:mr-0"
-                      >{{this.displayVersion}}</a>
-
-                    {{/if}}
-
-
-                  {{/each}}
+                      <oap-versions version="{{@root.page.displayVersion}}">
+                      {{#each this.versions}}
+                        <div data-url="{{this.url}}" data-version="{{this.displayVersion}}"></div>
+                      {{/each}}
+                    </oap-versions>
                   </div>
 
-                </div>
+                {{else}}
 
-              {{/each}}
+                  <span>{{{ this.title }}}</span>
+                  <div>
+                      <oap-versions version="none">
+                      {{#each this.versions}}
+                        <div data-url="{{this.url}}" data-version="{{this.displayVersion}}"></div>
+                      {{/each}}
+                    </oap-versions>
+                  </div>
+
+                {{/if}}
+
+              </div>
+            {{/each}}
           </section>
 
           <section class="lg:sticky pt-2" style="top: 3.95rem">
@@ -241,6 +242,10 @@
       </footer>
 
     </main>
+
+
+    <script type="module" src="{{{uiRootPath}}}/js/vendor/versions.esm.js"></script>
+    <!--    <script nomodule src="/build/versions.js"></script>-->
 
     <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
 
