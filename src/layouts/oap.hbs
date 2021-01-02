@@ -110,7 +110,7 @@
 
                   <span class="font-bold">{{{ this.title }}}</span>
                   <div>
-                      <oap-versions version="{{@root.page.displayVersion}}">
+                    <oap-versions version="{{@root.page.displayVersion}}">
                       {{#each this.versions}}
                         <div data-url="{{this.url}}" data-version="{{this.displayVersion}}"></div>
                       {{/each}}
@@ -121,7 +121,7 @@
 
                   <span>{{{ this.title }}}</span>
                   <div>
-                      <oap-versions version="none">
+                    <oap-versions version="none" {{#if (eq this.name 'oap')}} visible="home"{{/if}}>
                       {{#each this.versions}}
                         <div data-url="{{this.url}}" data-version="{{this.displayVersion}}"></div>
                       {{/each}}
