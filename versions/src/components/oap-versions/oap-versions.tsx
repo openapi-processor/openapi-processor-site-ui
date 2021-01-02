@@ -123,8 +123,8 @@ export class Version {
       return '';
     }
 
-    const classes = `relative z-20 block w-16 px-1 btn hover`
-    return <button class={classes} onClick={this.handleClick}>more</button>;
+    const classes = `relative z-20 block px-1 btn hover`
+    return <button class={classes} onClick={this.handleClick}>other</button>;
   }
 
   renderDropdown(): string {
