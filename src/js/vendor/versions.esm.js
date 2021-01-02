@@ -1,1 +1,0 @@
-import{p as e,b as o}from"./p-46fc9327.js";(()=>{const o=import.meta.url,s={};return""!==o&&(s.resourcesUrl=new URL(".",o).href),e(s)})().then((e=>o([["p-6e07af40",[[1,"my-component",{first:[1],middle:[1],last:[1]}]]],["p-971cc951",[[1,"oap-versions",{version:[1],open:[32]},[[8,"keydown","handleEscape"],[8,"oapClose","handleClose"]]]]]],e)));
