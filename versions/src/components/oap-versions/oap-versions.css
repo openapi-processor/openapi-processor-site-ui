@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply text-xs text-gray-700 border border-gray-400 rounded focus:outline-none focus:border-gray-600
+  }
+
+  .hover {
+    @apply hover:bg-green-600 hover:text-white
+  }
+
+  .active {
+    @apply bg-green-300
+  }
+}
