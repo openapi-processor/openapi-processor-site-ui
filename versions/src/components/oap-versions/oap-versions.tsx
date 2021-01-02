@@ -41,9 +41,9 @@ export class Version {
         url: this.me.children[i].attributes.getNamedItem('data-url').value,
         version: this.me.children[i].attributes.getNamedItem('data-version').value
       } as Item;
-      item.active = item.version == this.version
+      item.active = item.version === this.version
 
-      if (item.version == this.visible) {
+      if (item.version === this.visible) {
         this.left1 = item;
       }
       else {
@@ -96,6 +96,16 @@ export class Version {
     }
   }
 
+  render() {
+    return (
+      <div class="relative flex">
+        {this.render1()}
+        {this.render2()}
+        {this.renderMore()}
+    </div>
+    );
+  }
+
   empty(): string {
     return '';
   }
@@ -124,7 +134,21 @@ export class Version {
     }
 
     const classes = `relative z-20 block px-1 btn hover`
-    return <button class={classes} onClick={this.handleClick}>other</button>;
+    return (
+      <div>
+        <button class={classes} onClick={this.handleClick}>other</button>
+        {this.renderOutside()}
+        {this.renderDropdown()}
+      </div>
+    )
+  }
+
+  renderOutside(): string {
+    if (!this.open) {
+      return '';
+    }
+
+    return <button onClick={this.handleOutside} tabindex="-1" class="fixed z-10 w-full h-full inset-0 bg-transparent cursor-default"/>;
   }
 
   renderDropdown(): string {
@@ -141,25 +165,4 @@ export class Version {
     </div>;
   }
 
-  renderOutside(): string {
-    if (!this.open) {
-      return '';
-    }
-
-    return <button onClick={this.handleOutside} tabindex="-1" class="fixed z-10 w-full h-full inset-0 bg-transparent cursor-default"/>;
-  }
-
-  render() {
-    return (
-      <div class="relative flex">
-        {this.render1()}
-        {this.render2()}
-        <div>
-          {this.renderMore()}
-          {this.renderOutside()}
-          {this.renderDropdown()}
-        </div>
-    </div>
-    );
-  }
 }
