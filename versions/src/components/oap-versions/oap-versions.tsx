@@ -51,13 +51,15 @@ export class Version {
       }
     }
 
+    this.versions.sort((l, r) => r.version.localeCompare(l.version));
+
     const active = this.versions.find(i => i.active)
     if(active) {
       this.left2 = active;
       this.versions = this.versions.filter(i => !i.active)
+    } else {
+      this.left2 = this.versions.shift()
     }
-
-    this.versions.sort((l, r) => r.version.localeCompare(l.version));
   }
 
   toggleDropdown() {
