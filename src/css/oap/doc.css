@@ -212,6 +212,11 @@
   padding: 0.5rem;
 }
 
+.doc table.tableblock.grid-none td {
+  border-top: none;
+  border-bottom: none;
+}
+
 .doc .halign-left {
   text-align: left;
 }
