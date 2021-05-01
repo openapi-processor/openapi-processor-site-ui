@@ -14,6 +14,12 @@
           <a href="https://docs.openapiprocessor.io" class="ml-4 hover:text-gray-600">openapi-processor</a>
         </div>
 
+        {{> oap-top}}
+<!--        <div class="relative">-->
+<!--          <input id="search" placeholder="search" class="border-gray-300 border-2 pl-8 pr-2 rounded hover:border-green-700 focus:border-green-900 focus:outline-none">-->
+<!--          <i class="absolute left-0 pl-2 fas fa-search text-green-900" style="margin-top: 0.4rem"></i>-->
+<!--        </div>-->
+
         <div class="text-2xl">
           <a href="https://playground.openapiprocessor.io" target="_blank" class="hover:text-gray-600">
             <i class="far fa-play-circle mr-1"></i>playground
@@ -244,8 +250,9 @@
 
 
     <script type="module" src="{{{uiRootPath}}}/versions/versions.esm.js"></script>
-    <script async src="{{{uiRootPath}}}/js/vendor/tab-blocks.js"></script>
+<!--    <script async src="{{{uiRootPath}}}/js/vendor/tab-blocks.js"></script>-->
     <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
+    {{> oap-footer}}
 
     {{!--
     <!--
