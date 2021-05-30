@@ -8,6 +8,10 @@
 /* >> custom utilities ============================================= */
 @tailwind utilities;
 
+.font-extralight {
+  font-weight: 200;
+}
+
 @responsive {
   .w-sidebar {
     width: 350px;
@@ -19,9 +23,13 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .lg\:top-sidebar {
     top: 3.95rem;
+  }
+
+  .home .card {
+    width: 48%;
   }
 }
 
