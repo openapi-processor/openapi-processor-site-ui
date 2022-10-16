@@ -68,3 +68,11 @@
   font-style: normal;
   font-weight: bold;
 }
+
+.small {
+  font-size: 0.75rem;
+}
+
+.date {
+  font-size: 0.75rem;
+}
