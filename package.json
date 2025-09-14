@@ -14,7 +14,10 @@
     "last 2 versions"
   ],
   "devDependencies": {
-    "asciidoctor.js": "1.5.9",
+    "@asciidoctor/core": "~2.2",
+    "@fontsource/roboto": "~4.5",
+    "@fontsource/roboto-mono": "~4.5",
+    "@vscode/gulp-vinyl-zip": "~2.5",
     "autoprefixer": "~9.7",
     "browser-pack-flat": "~3.4",
     "browserify": "~16.5",
@@ -33,9 +36,8 @@
     "gulp-eslint": "~6.0",
     "gulp-imagemin": "~6.2",
     "gulp-postcss": "~8.0",
-    "gulp-stylelint": "~13.0.0",
+    "gulp-stylelint": "~13.0",
     "gulp-uglify": "~3.0",
-    "gulp-vinyl-zip": "~2.2",
     "handlebars": "~4.7",
     "highlight.js": "11.6.0",
     "js-yaml": "~3.13",
@@ -50,9 +52,6 @@
     "stylelint": "~13.3",
     "stylelint-config-standard": "~20.0",
     "tailwindcss": "~1.6.3",
-    "typeface-roboto": "0.0.75",
-    "typeface-roboto-mono": "0.0.75",
-    "vinyl-buffer": "~1.0",
     "vinyl-fs": "~3.0"
   }
 }
