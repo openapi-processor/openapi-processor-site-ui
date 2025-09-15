@@ -5,13 +5,16 @@
 
   var navContainer = document.querySelector('.nav-container')
   var navToggle = document.querySelector('.nav-toggle')
+  if (!navContainer && (!navToggle || (navToggle.hidden = true))) return
+  var nav = navContainer.querySelector('.nav')
+  var navMenuToggle = navContainer.querySelector('.nav-menu-toggle')
 
   navToggle.addEventListener('click', showNav)
   navContainer.addEventListener('click', trapEvent)
 
   var menuPanel = navContainer.querySelector('[data-panel=menu]')
   if (!menuPanel) return
-  var nav = navContainer.querySelector('.nav')
+  var explorePanel = navContainer.querySelector('[data-panel=explore]')
 
   var currentPageItem = menuPanel.querySelector('.is-current-page')
   var originalPageItem = currentPageItem
@@ -32,12 +35,30 @@
     }
   })
 
-  nav.querySelector('[data-panel=explore] .context').addEventListener('click', function () {
-    // NOTE logic assumes there are only two panels
-    find(nav, '[data-panel]').forEach(function (panel) {
-      panel.classList.toggle('is-active')
+  if (navMenuToggle && menuPanel.querySelector('.nav-item-toggle')) {
+    navMenuToggle.style.display = ''
+    navMenuToggle.addEventListener('click', function () {
+      var collapse = !this.classList.toggle('is-active')
+      find(menuPanel, '.nav-item > .nav-item-toggle').forEach(function (btn) {
+        collapse ? btn.parentElement.classList.remove('is-active') : btn.parentElement.classList.add('is-active')
+      })
+      if (currentPageItem) {
+        if (collapse) activateCurrentPath(currentPageItem)
+        scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
+      } else {
+        menuPanel.scrollTop = 0
+      }
     })
-  })
+  }
+
+  if (explorePanel) {
+    explorePanel.querySelector('.context').addEventListener('click', function () {
+      // NOTE logic assumes there are only two panels
+      find(nav, '[data-panel]').forEach(function (panel) {
+        panel.classList.toggle('is-active')
+      })
+    })
+  }
 
   // NOTE prevent text from being selected by double click
   menuPanel.addEventListener('mousedown', function (e) {
@@ -100,7 +121,13 @@
   }
 
   function toggleActive () {
-    this.classList.toggle('is-active')
+    if (this.classList.toggle('is-active')) {
+      var padding = parseFloat(window.getComputedStyle(this).marginTop)
+      var rect = this.getBoundingClientRect()
+      var menuPanelRect = menuPanel.getBoundingClientRect()
+      var overflowY = (rect.bottom - menuPanelRect.top - menuPanelRect.height + padding).toFixed()
+      if (overflowY > 0) menuPanel.scrollTop += Math.min((rect.top - menuPanelRect.top - padding).toFixed(), overflowY)
+    }
   }
 
   function showNav (e) {
