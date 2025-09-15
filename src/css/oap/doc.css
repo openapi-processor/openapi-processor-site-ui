@@ -262,6 +262,11 @@
   margin: 1rem 0 0;
 }
 
+/* oap: tailwind seems to clear this */
+.ulist ul {
+  list-style: inherit;
+}
+
 .doc > table.tableblock,
 .doc > table.tableblock + *,
 .doc .tablecontainer,
