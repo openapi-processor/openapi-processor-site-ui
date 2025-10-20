@@ -452,26 +452,31 @@
 .doc .admonitionblock td.icon i.icon-caution {
   background-color: var(--caution-color);
   color: var(--caution-on-color);
+  font-family: inherit;
 }
 
 .doc .admonitionblock td.icon i.icon-important {
   background-color: var(--important-color);
   color: var(--important-on-color);
+  font-family: inherit;
 }
 
 .doc .admonitionblock td.icon i.icon-note {
   background-color: var(--note-color);
   color: var(--note-on-color);
+  font-family: inherit;
 }
 
 .doc .admonitionblock td.icon i.icon-tip {
   background-color: var(--tip-color);
   color: var(--tip-on-color);
+  font-family: inherit;
 }
 
 .doc .admonitionblock td.icon i.icon-warning {
   background-color: var(--warning-color);
   color: var(--warning-on-color);
+  font-family: inherit;
 }
 
 .doc .imageblock,
