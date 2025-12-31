@@ -37,6 +37,18 @@
   // hljs.registerLanguage('swift', require('highlight.js/lib/languages/swift'))
   hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
   hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
+  // Register the plugin
+  hljs.addPlugin({
+    // https://gitlab.com/antora/antora-ui-default/-/issues/203
+    // https://github.com/asciidoctor/asciidoctor/issues/3976#issuecomment-3449797396
+    'after:highlight': (result) => {
+      const callout = '<i class="conum" data-value="$1"></i><b>$1</b>'
+      result.value = result.value
+        .replaceAll(/<span class="hljs-string">\((\d+)\)<\/span>/g, callout) // YAML
+        .replaceAll(/\(<span class="hljs-number">([1-9]|1[0-9]|20)<\/span>\)$/gm, callout) // Java
+        .replaceAll(/\(([1-9]|1[0-9]|20)\)$/gm, callout)
+    },
+  })
   ;[].slice.call(document.querySelectorAll('pre code.hljs[data-lang]')).forEach(function (node) {
     hljs.highlightElement(node)
   })
