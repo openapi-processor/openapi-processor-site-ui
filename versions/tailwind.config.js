@@ -4,7 +4,7 @@ module.exports = {
     content: [
       './src/**/*.tsx',
       './src/**/*.js',
-      './src/**/*.css'
+      './src/**/*.css',
     ],
     options: {
       safelist: ['last:mr-0'],
