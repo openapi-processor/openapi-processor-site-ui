@@ -27,10 +27,6 @@
   .lg\:top-sidebar {
     top: 3.95rem;
   }
-
-  .home .card {
-    width: 48%;
-  }
 }
 
 /* >> custom utilities ============================================= */

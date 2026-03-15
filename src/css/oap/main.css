@@ -76,3 +76,11 @@
 .date {
   font-size: 0.75rem;
 }
+
+.w-third {
+  width: 30%;
+}
+
+.w-half {
+  width: 47%;
+}
