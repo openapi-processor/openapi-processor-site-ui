@@ -1,3 +1,11 @@
 == new release
 
 create local tag & push. GitHub ci will create a new release.
+
+
+== sync
+
+ git remote add upstream https://gitlab.com/antora/antora-default-ui.git
+ git fetch upstream
+ git checkout master
+ git merge upstream/master
