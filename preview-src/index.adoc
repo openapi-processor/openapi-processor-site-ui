@@ -6,6 +6,7 @@ Author Name
 :!table-caption:
 //:page-role: -toc
 :page-pagination:
+:description: A "preview" site for the UI.
 
 [.float-group]
 --
@@ -304,7 +305,8 @@ If you installed the CLI and the default site generator globally, you can upgrad
 
 Or you can install the metapackage to upgrade both packages at once.
 
- $ npm i -g antora
+[subs=+quotes]
+ $ npm i -g *antora*
 ====
 
 Nominavi luptatum eos, an vim hinc philosophia intellegebat.
@@ -330,6 +332,9 @@ Make the switch today!
 
 .Full Circle with Jake Blauvelt
 video::300817511[vimeo,640,360,align=left]
+
+.Naturally with Jake Blauvelt
+video::fUvDykQUgMk[youtube,640,360,align=center]
 
 [#english+中文]
 == English + 中文
