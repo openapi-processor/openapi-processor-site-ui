@@ -53,5 +53,8 @@
     "stylelint-config-standard": "~20.0",
     "tailwindcss": "~1.6.3",
     "vinyl-fs": "~3.0"
+  },
+  "overrides": {
+    "fast-xml-parser": "4.5.5"
   }
 }
