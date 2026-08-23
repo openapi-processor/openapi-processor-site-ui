@@ -56,6 +56,7 @@
   },
   "overrides": {
     "fast-xml-parser": "4.5.5",
-    "qs": "6.14.2"
+    "qs": "6.14.2",
+    "shell-quote": "1.8.4"
   }
 }
